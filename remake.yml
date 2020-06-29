@@ -30,7 +30,7 @@ targets:
   oldest_active_sites:
     command: find_oldest_sites(states, parameter)
 
-  # TODO: PULL SITE DATA HERE
+  # Pull site data
   wi_data:
     command: get_site_data(oldest_active_sites, I("WI"), parameter)
   mn_data:
