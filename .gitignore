@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# scipiper specific ignores:
+.remake/
+3_visualize/out/
