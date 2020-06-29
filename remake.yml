@@ -22,7 +22,7 @@ targets:
 
   # Configuration
   states:
-    command: c(I(c('WI','MN','MI')))
+    command: c(I(c('WI','MN','MI', 'IL')))
   parameter:
     command: c(I('00060'))
 
