@@ -25,6 +25,8 @@ targets:
       - MN_data
       - MI_data
       - IL_data
+      - IN_data
+      - IA_data
 
   # --- WI --- #
   
@@ -45,4 +47,14 @@ targets:
   
   IL_data:
     command: get_site_data(state_info_file='1_fetch/tmp/inventory_IL.tsv', parameter=parameter)
+
+  # --- IN --- #
+  
+  IN_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_IN.tsv', parameter=parameter)
+
+  # --- IA --- #
+  
+  IA_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_IA.tsv', parameter=parameter)
 
