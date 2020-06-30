@@ -7,20 +7,24 @@ packages:
   - rnaturalearth
   - cowplot
   - scipiper
+  - leaflet
+  - leafpop
+  - htmlwidgets
 
 sources:
   - 1_fetch/src/find_oldest_sites.R
   - 1_fetch/src/get_site_data.R
   - 3_visualize/src/plot_data_coverage.R
   - 3_visualize/src/map_sites.R
+  - 3_visualize/src/map_timeseries.R
   - 123_state_tasks.R
 
 targets:
   main:
     depends:
-      - obs_tallies
       - 3_visualize/out/data_coverage.png
       - 3_visualize/out/site_map.png
+      - 3_visualize/out/timeseries_map.html
 
   # Configuration
   states:
@@ -58,3 +62,10 @@ targets:
   # Map oldest sites
   3_visualize/out/site_map.png:
     command: map_sites(oldest_active_sites, target_name)
+
+  # Create interactive map of oldest sites
+  3_visualize/out/timeseries_map.html:
+    command: map_timeseries(
+      site_info = oldest_active_sites,
+      plot_info = timeseries_plots_info,
+      out_file = target_name)
