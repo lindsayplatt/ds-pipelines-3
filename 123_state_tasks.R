@@ -42,6 +42,7 @@ do_state_tasks <- function(oldest_active_sites, ...) {
   task_plan <- create_task_plan(
     task_names = state_abbv,
     task_steps = list(download_step, plot_step, tally_step),
+    final_steps = 'tally',
     add_complete = FALSE)
 
   # Create the task remakefile
@@ -51,14 +52,16 @@ do_state_tasks <- function(oldest_active_sites, ...) {
     include = 'remake.yml',
     sources = c(...),
     packages = c('tidyverse', 'dataRetrieval', 'lubridate'),
-    tickquote_combinee_objects = FALSE,
-    finalize_funs = c())
+    final_targets = 'obs_tallies',
+    finalize_funs = 'combine_obs_tallies',
+    as_promises = FALSE,
+    tickquote_combinee_objects = TRUE)
 
   # Build the tasks
-  scmake('123_state_tasks', remake_file='123_state_tasks.yml')
+  obs_tallies <- scmake('obs_tallies', remake_file='123_state_tasks.yml')
 
-  # Return nothing to the parent remake file
-  return()
+  # Return the combined data frame of tallies from each state
+  return(obs_tallies)
 }
 
 split_inventory <- function(
@@ -79,4 +82,8 @@ split_inventory <- function(
     sort()
 
   sc_indicate(ind_file = summary_file, data_file = split_files)
+}
+
+combine_obs_tallies <- function(...) {
+  purrr::reduce(list(...), bind_rows)
 }
