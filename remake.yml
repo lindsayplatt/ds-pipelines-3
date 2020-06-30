@@ -33,7 +33,7 @@ targets:
     command: find_oldest_sites(states, parameter)
 
   # Pull site data
-  obs_tallies:
+  state_combiners:
     command: do_state_tasks(
       oldest_active_sites,
       '1_fetch/src/get_site_data.R',
@@ -42,6 +42,11 @@ targets:
       '123_state_tasks.R')
     depends:
       - parameter
+
+  obs_tallies:
+    command: pluck(state_combiners, target_name)
+  timeseries_plots_info:
+    command: pluck(state_combiners, target_name)
 
   # Plot data coverage
   3_visualize/out/data_coverage.png:

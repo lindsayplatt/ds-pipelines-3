@@ -61,8 +61,13 @@ do_state_tasks <- function(oldest_active_sites, ...) {
   obs_tallies <- scmake('obs_tallies_promise', remake_file='123_state_tasks.yml')
   scmake('timeseries_plots.yml_promise', remake_file='123_state_tasks.yml')
 
-  # Return the combined data frame of tallies from each state
-  return(obs_tallies)
+  # Read timeseries_plots.yml into a tibble format
+  timeseries_plots_info <- yaml::yaml.load_file('3_visualize/out/timeseries_plots.yml') %>%
+    tibble::enframe(name = 'filename', value = 'hash') %>%
+    mutate(hash = purrr::map_chr(hash, `[[`, 1))
+
+  # Return the combiner targets to the parent remake file
+  return(list(obs_tallies=obs_tallies, timeseries_plots_info=timeseries_plots_info))
 }
 
 split_inventory <- function(
