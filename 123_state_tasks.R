@@ -54,11 +54,11 @@ do_state_tasks <- function(oldest_active_sites, ...) {
     packages = c('tidyverse', 'dataRetrieval', 'lubridate'),
     final_targets = 'obs_tallies',
     finalize_funs = 'combine_obs_tallies',
-    as_promises = FALSE,
+    as_promises = TRUE,
     tickquote_combinee_objects = TRUE)
 
   # Build the tasks
-  obs_tallies <- scmake('obs_tallies', remake_file='123_state_tasks.yml')
+  obs_tallies <- scmake('obs_tallies_promise', remake_file='123_state_tasks.yml')
 
   # Return the combined data frame of tallies from each state
   return(obs_tallies)

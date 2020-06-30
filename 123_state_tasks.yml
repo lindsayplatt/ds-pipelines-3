@@ -25,7 +25,7 @@ file_extensions:
 targets:
   123_state_tasks:
     depends:
-      - obs_tallies
+      - obs_tallies_promise
 
   # --- WI --- #
   
@@ -95,7 +95,7 @@ targets:
 
   # --- Overall job --- #
 
-  obs_tallies:
+  obs_tallies_promise:
     command: combine_obs_tallies(
       `WI_tally`,
       `MN_tally`,
