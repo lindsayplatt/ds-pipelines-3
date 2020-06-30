@@ -28,7 +28,7 @@ targets:
 
   # Configuration
   states:
-    command: c(I(c('WI','MN','MI', 'IL', 'IA')))
+    command: c(I(c('WI','MN','MI', 'IL', 'IA', 'IN')))
   parameter:
     command: c(I('00060'))
 

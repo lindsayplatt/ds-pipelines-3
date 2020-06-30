@@ -83,6 +83,17 @@ targets:
   IA_tally:
     command: tally_site_obs(IA_data)
 
+  # --- IN --- #
+  
+  IN_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_IN.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_IN.png:
+    command: plot_site_data(target_name, IN_data, parameter)
+
+  IN_tally:
+    command: tally_site_obs(IN_data)
+
   # --- Overall job --- #
 
   obs_tallies_promise:
@@ -96,7 +107,9 @@ targets:
       `IL_tally`,
       '3_visualize/out/timeseries_IL.png',
       `IA_tally`,
-      '3_visualize/out/timeseries_IA.png')
+      '3_visualize/out/timeseries_IA.png',
+      `IN_tally`,
+      '3_visualize/out/timeseries_IN.png')
     
   timeseries_plots.yml_promise:
     command: summarize_timeseries_plots(I('3_visualize/out/timeseries_plots.yml'),
@@ -109,5 +122,7 @@ targets:
       `IL_tally`,
       '3_visualize/out/timeseries_IL.png',
       `IA_tally`,
-      '3_visualize/out/timeseries_IA.png')
+      '3_visualize/out/timeseries_IA.png',
+      `IN_tally`,
+      '3_visualize/out/timeseries_IN.png')
     
