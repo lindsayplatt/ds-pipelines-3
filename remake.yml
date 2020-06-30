@@ -34,7 +34,9 @@ targets:
   state_tasks:
     command: do_state_tasks(
       oldest_active_sites,
-      '1_fetch/src/get_site_data.R', parameter)
+      '1_fetch/src/get_site_data.R')
+    depends:
+      - parameter
 
   # Map oldest sites
   3_visualize/out/site_map.png:
