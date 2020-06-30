@@ -42,7 +42,7 @@ do_state_tasks <- function(oldest_active_sites, ...) {
   task_plan <- create_task_plan(
     task_names = state_abbv,
     task_steps = list(download_step, plot_step, tally_step),
-    final_steps = 'tally',
+    final_steps = c('tally', 'plot'),
     add_complete = FALSE)
 
   # Create the task remakefile
@@ -52,13 +52,14 @@ do_state_tasks <- function(oldest_active_sites, ...) {
     include = 'remake.yml',
     sources = c(...),
     packages = c('tidyverse', 'dataRetrieval', 'lubridate'),
-    final_targets = 'obs_tallies',
-    finalize_funs = 'combine_obs_tallies',
+    final_targets = c('obs_tallies', '3_visualize/out/timeseries_plots.yml'),
+    finalize_funs = c('combine_obs_tallies', 'summarize_timeseries_plots'),
     as_promises = TRUE,
     tickquote_combinee_objects = TRUE)
 
   # Build the tasks
   obs_tallies <- scmake('obs_tallies_promise', remake_file='123_state_tasks.yml')
+  scmake('timeseries_plots.yml_promise', remake_file='123_state_tasks.yml')
 
   # Return the combined data frame of tallies from each state
   return(obs_tallies)
@@ -85,5 +86,17 @@ split_inventory <- function(
 }
 
 combine_obs_tallies <- function(...) {
-  purrr::reduce(list(...), bind_rows)
+  # filter to just those arguments that are tibbles (because the only step
+  # outputs that are tibbles are the tallies)
+  dots <- list(...)
+  tally_dots <- dots[purrr::map_lgl(dots, is_tibble)]
+  purrr::reduce(tally_dots, bind_rows)
+}
+
+summarize_timeseries_plots <- function(ind_file, ...) {
+  # filter to just those arguments that are character strings (because the only
+  # step outputs that are characters are the plot filenames)
+  dots <- list(...)
+  plot_dots <- dots[purrr::map_lgl(dots, is.character)]
+  do.call(combine_to_ind, c(list(ind_file), plot_dots))
 }

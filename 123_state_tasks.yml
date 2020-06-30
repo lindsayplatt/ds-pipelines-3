@@ -26,6 +26,7 @@ targets:
   123_state_tasks:
     depends:
       - obs_tallies_promise
+      - timeseries_plots.yml_promise
 
   # --- WI --- #
   
@@ -87,8 +88,26 @@ targets:
   obs_tallies_promise:
     command: combine_obs_tallies(
       `WI_tally`,
+      '3_visualize/out/timeseries_WI.png',
       `MN_tally`,
+      '3_visualize/out/timeseries_MN.png',
       `MI_tally`,
+      '3_visualize/out/timeseries_MI.png',
       `IL_tally`,
-      `IA_tally`)
+      '3_visualize/out/timeseries_IL.png',
+      `IA_tally`,
+      '3_visualize/out/timeseries_IA.png')
+    
+  timeseries_plots.yml_promise:
+    command: summarize_timeseries_plots(I('3_visualize/out/timeseries_plots.yml'),
+      `WI_tally`,
+      '3_visualize/out/timeseries_WI.png',
+      `MN_tally`,
+      '3_visualize/out/timeseries_MN.png',
+      `MI_tally`,
+      '3_visualize/out/timeseries_MI.png',
+      `IL_tally`,
+      '3_visualize/out/timeseries_IL.png',
+      `IA_tally`,
+      '3_visualize/out/timeseries_IA.png')
     
