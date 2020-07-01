@@ -28,38 +28,126 @@ targets:
       - obs_tallies_promise
       - timeseries_plots.yml_promise
 
-  # --- WI --- #
+  # --- AL --- #
   
-  WI_data:
-    command: get_site_data(state_info_file='1_fetch/tmp/inventory_WI.tsv', parameter=parameter)
+  AL_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_AL.tsv', parameter=parameter)
 
-  3_visualize/out/timeseries_WI.png:
-    command: plot_site_data(target_name, WI_data, parameter)
+  3_visualize/out/timeseries_AL.png:
+    command: plot_site_data(target_name, AL_data, parameter)
 
-  WI_tally:
-    command: tally_site_obs(WI_data)
+  AL_tally:
+    command: tally_site_obs(AL_data)
 
-  # --- MN --- #
+  # --- AZ --- #
   
-  MN_data:
-    command: get_site_data(state_info_file='1_fetch/tmp/inventory_MN.tsv', parameter=parameter)
+  AZ_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_AZ.tsv', parameter=parameter)
 
-  3_visualize/out/timeseries_MN.png:
-    command: plot_site_data(target_name, MN_data, parameter)
+  3_visualize/out/timeseries_AZ.png:
+    command: plot_site_data(target_name, AZ_data, parameter)
 
-  MN_tally:
-    command: tally_site_obs(MN_data)
+  AZ_tally:
+    command: tally_site_obs(AZ_data)
 
-  # --- MI --- #
+  # --- AR --- #
   
-  MI_data:
-    command: get_site_data(state_info_file='1_fetch/tmp/inventory_MI.tsv', parameter=parameter)
+  AR_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_AR.tsv', parameter=parameter)
 
-  3_visualize/out/timeseries_MI.png:
-    command: plot_site_data(target_name, MI_data, parameter)
+  3_visualize/out/timeseries_AR.png:
+    command: plot_site_data(target_name, AR_data, parameter)
 
-  MI_tally:
-    command: tally_site_obs(MI_data)
+  AR_tally:
+    command: tally_site_obs(AR_data)
+
+  # --- CA --- #
+  
+  CA_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_CA.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_CA.png:
+    command: plot_site_data(target_name, CA_data, parameter)
+
+  CA_tally:
+    command: tally_site_obs(CA_data)
+
+  # --- CO --- #
+  
+  CO_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_CO.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_CO.png:
+    command: plot_site_data(target_name, CO_data, parameter)
+
+  CO_tally:
+    command: tally_site_obs(CO_data)
+
+  # --- CT --- #
+  
+  CT_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_CT.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_CT.png:
+    command: plot_site_data(target_name, CT_data, parameter)
+
+  CT_tally:
+    command: tally_site_obs(CT_data)
+
+  # --- DE --- #
+  
+  DE_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_DE.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_DE.png:
+    command: plot_site_data(target_name, DE_data, parameter)
+
+  DE_tally:
+    command: tally_site_obs(DE_data)
+
+  # --- DC --- #
+  
+  DC_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_DC.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_DC.png:
+    command: plot_site_data(target_name, DC_data, parameter)
+
+  DC_tally:
+    command: tally_site_obs(DC_data)
+
+  # --- FL --- #
+  
+  FL_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_FL.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_FL.png:
+    command: plot_site_data(target_name, FL_data, parameter)
+
+  FL_tally:
+    command: tally_site_obs(FL_data)
+
+  # --- GA --- #
+  
+  GA_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_GA.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_GA.png:
+    command: plot_site_data(target_name, GA_data, parameter)
+
+  GA_tally:
+    command: tally_site_obs(GA_data)
+
+  # --- ID --- #
+  
+  ID_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_ID.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_ID.png:
+    command: plot_site_data(target_name, ID_data, parameter)
+
+  ID_tally:
+    command: tally_site_obs(ID_data)
 
   # --- IL --- #
   
@@ -72,17 +160,6 @@ targets:
   IL_tally:
     command: tally_site_obs(IL_data)
 
-  # --- IA --- #
-  
-  IA_data:
-    command: get_site_data(state_info_file='1_fetch/tmp/inventory_IA.tsv', parameter=parameter)
-
-  3_visualize/out/timeseries_IA.png:
-    command: plot_site_data(target_name, IA_data, parameter)
-
-  IA_tally:
-    command: tally_site_obs(IA_data)
-
   # --- IN --- #
   
   IN_data:
@@ -94,35 +171,663 @@ targets:
   IN_tally:
     command: tally_site_obs(IN_data)
 
+  # --- IA --- #
+  
+  IA_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_IA.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_IA.png:
+    command: plot_site_data(target_name, IA_data, parameter)
+
+  IA_tally:
+    command: tally_site_obs(IA_data)
+
+  # --- KS --- #
+  
+  KS_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_KS.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_KS.png:
+    command: plot_site_data(target_name, KS_data, parameter)
+
+  KS_tally:
+    command: tally_site_obs(KS_data)
+
+  # --- KY --- #
+  
+  KY_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_KY.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_KY.png:
+    command: plot_site_data(target_name, KY_data, parameter)
+
+  KY_tally:
+    command: tally_site_obs(KY_data)
+
+  # --- LA --- #
+  
+  LA_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_LA.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_LA.png:
+    command: plot_site_data(target_name, LA_data, parameter)
+
+  LA_tally:
+    command: tally_site_obs(LA_data)
+
+  # --- ME --- #
+  
+  ME_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_ME.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_ME.png:
+    command: plot_site_data(target_name, ME_data, parameter)
+
+  ME_tally:
+    command: tally_site_obs(ME_data)
+
+  # --- MD --- #
+  
+  MD_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_MD.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_MD.png:
+    command: plot_site_data(target_name, MD_data, parameter)
+
+  MD_tally:
+    command: tally_site_obs(MD_data)
+
+  # --- MA --- #
+  
+  MA_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_MA.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_MA.png:
+    command: plot_site_data(target_name, MA_data, parameter)
+
+  MA_tally:
+    command: tally_site_obs(MA_data)
+
+  # --- MI --- #
+  
+  MI_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_MI.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_MI.png:
+    command: plot_site_data(target_name, MI_data, parameter)
+
+  MI_tally:
+    command: tally_site_obs(MI_data)
+
+  # --- MN --- #
+  
+  MN_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_MN.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_MN.png:
+    command: plot_site_data(target_name, MN_data, parameter)
+
+  MN_tally:
+    command: tally_site_obs(MN_data)
+
+  # --- MS --- #
+  
+  MS_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_MS.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_MS.png:
+    command: plot_site_data(target_name, MS_data, parameter)
+
+  MS_tally:
+    command: tally_site_obs(MS_data)
+
+  # --- MO --- #
+  
+  MO_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_MO.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_MO.png:
+    command: plot_site_data(target_name, MO_data, parameter)
+
+  MO_tally:
+    command: tally_site_obs(MO_data)
+
+  # --- MT --- #
+  
+  MT_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_MT.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_MT.png:
+    command: plot_site_data(target_name, MT_data, parameter)
+
+  MT_tally:
+    command: tally_site_obs(MT_data)
+
+  # --- NE --- #
+  
+  NE_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_NE.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_NE.png:
+    command: plot_site_data(target_name, NE_data, parameter)
+
+  NE_tally:
+    command: tally_site_obs(NE_data)
+
+  # --- NV --- #
+  
+  NV_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_NV.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_NV.png:
+    command: plot_site_data(target_name, NV_data, parameter)
+
+  NV_tally:
+    command: tally_site_obs(NV_data)
+
+  # --- NH --- #
+  
+  NH_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_NH.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_NH.png:
+    command: plot_site_data(target_name, NH_data, parameter)
+
+  NH_tally:
+    command: tally_site_obs(NH_data)
+
+  # --- NJ --- #
+  
+  NJ_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_NJ.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_NJ.png:
+    command: plot_site_data(target_name, NJ_data, parameter)
+
+  NJ_tally:
+    command: tally_site_obs(NJ_data)
+
+  # --- NM --- #
+  
+  NM_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_NM.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_NM.png:
+    command: plot_site_data(target_name, NM_data, parameter)
+
+  NM_tally:
+    command: tally_site_obs(NM_data)
+
+  # --- NY --- #
+  
+  NY_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_NY.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_NY.png:
+    command: plot_site_data(target_name, NY_data, parameter)
+
+  NY_tally:
+    command: tally_site_obs(NY_data)
+
+  # --- NC --- #
+  
+  NC_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_NC.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_NC.png:
+    command: plot_site_data(target_name, NC_data, parameter)
+
+  NC_tally:
+    command: tally_site_obs(NC_data)
+
+  # --- ND --- #
+  
+  ND_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_ND.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_ND.png:
+    command: plot_site_data(target_name, ND_data, parameter)
+
+  ND_tally:
+    command: tally_site_obs(ND_data)
+
+  # --- OH --- #
+  
+  OH_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_OH.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_OH.png:
+    command: plot_site_data(target_name, OH_data, parameter)
+
+  OH_tally:
+    command: tally_site_obs(OH_data)
+
+  # --- OK --- #
+  
+  OK_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_OK.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_OK.png:
+    command: plot_site_data(target_name, OK_data, parameter)
+
+  OK_tally:
+    command: tally_site_obs(OK_data)
+
+  # --- OR --- #
+  
+  OR_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_OR.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_OR.png:
+    command: plot_site_data(target_name, OR_data, parameter)
+
+  OR_tally:
+    command: tally_site_obs(OR_data)
+
+  # --- PA --- #
+  
+  PA_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_PA.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_PA.png:
+    command: plot_site_data(target_name, PA_data, parameter)
+
+  PA_tally:
+    command: tally_site_obs(PA_data)
+
+  # --- RI --- #
+  
+  RI_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_RI.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_RI.png:
+    command: plot_site_data(target_name, RI_data, parameter)
+
+  RI_tally:
+    command: tally_site_obs(RI_data)
+
+  # --- SC --- #
+  
+  SC_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_SC.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_SC.png:
+    command: plot_site_data(target_name, SC_data, parameter)
+
+  SC_tally:
+    command: tally_site_obs(SC_data)
+
+  # --- SD --- #
+  
+  SD_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_SD.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_SD.png:
+    command: plot_site_data(target_name, SD_data, parameter)
+
+  SD_tally:
+    command: tally_site_obs(SD_data)
+
+  # --- TN --- #
+  
+  TN_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_TN.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_TN.png:
+    command: plot_site_data(target_name, TN_data, parameter)
+
+  TN_tally:
+    command: tally_site_obs(TN_data)
+
+  # --- TX --- #
+  
+  TX_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_TX.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_TX.png:
+    command: plot_site_data(target_name, TX_data, parameter)
+
+  TX_tally:
+    command: tally_site_obs(TX_data)
+
+  # --- UT --- #
+  
+  UT_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_UT.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_UT.png:
+    command: plot_site_data(target_name, UT_data, parameter)
+
+  UT_tally:
+    command: tally_site_obs(UT_data)
+
+  # --- VT --- #
+  
+  VT_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_VT.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_VT.png:
+    command: plot_site_data(target_name, VT_data, parameter)
+
+  VT_tally:
+    command: tally_site_obs(VT_data)
+
+  # --- VA --- #
+  
+  VA_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_VA.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_VA.png:
+    command: plot_site_data(target_name, VA_data, parameter)
+
+  VA_tally:
+    command: tally_site_obs(VA_data)
+
+  # --- WA --- #
+  
+  WA_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_WA.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_WA.png:
+    command: plot_site_data(target_name, WA_data, parameter)
+
+  WA_tally:
+    command: tally_site_obs(WA_data)
+
+  # --- WV --- #
+  
+  WV_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_WV.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_WV.png:
+    command: plot_site_data(target_name, WV_data, parameter)
+
+  WV_tally:
+    command: tally_site_obs(WV_data)
+
+  # --- WI --- #
+  
+  WI_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_WI.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_WI.png:
+    command: plot_site_data(target_name, WI_data, parameter)
+
+  WI_tally:
+    command: tally_site_obs(WI_data)
+
+  # --- WY --- #
+  
+  WY_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_WY.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_WY.png:
+    command: plot_site_data(target_name, WY_data, parameter)
+
+  WY_tally:
+    command: tally_site_obs(WY_data)
+
+  # --- AK --- #
+  
+  AK_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_AK.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_AK.png:
+    command: plot_site_data(target_name, AK_data, parameter)
+
+  AK_tally:
+    command: tally_site_obs(AK_data)
+
+  # --- HI --- #
+  
+  HI_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_HI.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_HI.png:
+    command: plot_site_data(target_name, HI_data, parameter)
+
+  HI_tally:
+    command: tally_site_obs(HI_data)
+
+  # --- GU --- #
+  
+  GU_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_GU.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_GU.png:
+    command: plot_site_data(target_name, GU_data, parameter)
+
+  GU_tally:
+    command: tally_site_obs(GU_data)
+
+  # --- PR --- #
+  
+  PR_data:
+    command: get_site_data(state_info_file='1_fetch/tmp/inventory_PR.tsv', parameter=parameter)
+
+  3_visualize/out/timeseries_PR.png:
+    command: plot_site_data(target_name, PR_data, parameter)
+
+  PR_tally:
+    command: tally_site_obs(PR_data)
+
   # --- Overall job --- #
 
   obs_tallies_promise:
     command: combine_obs_tallies(
-      `WI_tally`,
-      '3_visualize/out/timeseries_WI.png',
-      `MN_tally`,
-      '3_visualize/out/timeseries_MN.png',
-      `MI_tally`,
-      '3_visualize/out/timeseries_MI.png',
+      `AL_tally`,
+      '3_visualize/out/timeseries_AL.png',
+      `AZ_tally`,
+      '3_visualize/out/timeseries_AZ.png',
+      `AR_tally`,
+      '3_visualize/out/timeseries_AR.png',
+      `CA_tally`,
+      '3_visualize/out/timeseries_CA.png',
+      `CO_tally`,
+      '3_visualize/out/timeseries_CO.png',
+      `CT_tally`,
+      '3_visualize/out/timeseries_CT.png',
+      `DE_tally`,
+      '3_visualize/out/timeseries_DE.png',
+      `DC_tally`,
+      '3_visualize/out/timeseries_DC.png',
+      `FL_tally`,
+      '3_visualize/out/timeseries_FL.png',
+      `GA_tally`,
+      '3_visualize/out/timeseries_GA.png',
+      `ID_tally`,
+      '3_visualize/out/timeseries_ID.png',
       `IL_tally`,
       '3_visualize/out/timeseries_IL.png',
+      `IN_tally`,
+      '3_visualize/out/timeseries_IN.png',
       `IA_tally`,
       '3_visualize/out/timeseries_IA.png',
-      `IN_tally`,
-      '3_visualize/out/timeseries_IN.png')
+      `KS_tally`,
+      '3_visualize/out/timeseries_KS.png',
+      `KY_tally`,
+      '3_visualize/out/timeseries_KY.png',
+      `LA_tally`,
+      '3_visualize/out/timeseries_LA.png',
+      `ME_tally`,
+      '3_visualize/out/timeseries_ME.png',
+      `MD_tally`,
+      '3_visualize/out/timeseries_MD.png',
+      `MA_tally`,
+      '3_visualize/out/timeseries_MA.png',
+      `MI_tally`,
+      '3_visualize/out/timeseries_MI.png',
+      `MN_tally`,
+      '3_visualize/out/timeseries_MN.png',
+      `MS_tally`,
+      '3_visualize/out/timeseries_MS.png',
+      `MO_tally`,
+      '3_visualize/out/timeseries_MO.png',
+      `MT_tally`,
+      '3_visualize/out/timeseries_MT.png',
+      `NE_tally`,
+      '3_visualize/out/timeseries_NE.png',
+      `NV_tally`,
+      '3_visualize/out/timeseries_NV.png',
+      `NH_tally`,
+      '3_visualize/out/timeseries_NH.png',
+      `NJ_tally`,
+      '3_visualize/out/timeseries_NJ.png',
+      `NM_tally`,
+      '3_visualize/out/timeseries_NM.png',
+      `NY_tally`,
+      '3_visualize/out/timeseries_NY.png',
+      `NC_tally`,
+      '3_visualize/out/timeseries_NC.png',
+      `ND_tally`,
+      '3_visualize/out/timeseries_ND.png',
+      `OH_tally`,
+      '3_visualize/out/timeseries_OH.png',
+      `OK_tally`,
+      '3_visualize/out/timeseries_OK.png',
+      `OR_tally`,
+      '3_visualize/out/timeseries_OR.png',
+      `PA_tally`,
+      '3_visualize/out/timeseries_PA.png',
+      `RI_tally`,
+      '3_visualize/out/timeseries_RI.png',
+      `SC_tally`,
+      '3_visualize/out/timeseries_SC.png',
+      `SD_tally`,
+      '3_visualize/out/timeseries_SD.png',
+      `TN_tally`,
+      '3_visualize/out/timeseries_TN.png',
+      `TX_tally`,
+      '3_visualize/out/timeseries_TX.png',
+      `UT_tally`,
+      '3_visualize/out/timeseries_UT.png',
+      `VT_tally`,
+      '3_visualize/out/timeseries_VT.png',
+      `VA_tally`,
+      '3_visualize/out/timeseries_VA.png',
+      `WA_tally`,
+      '3_visualize/out/timeseries_WA.png',
+      `WV_tally`,
+      '3_visualize/out/timeseries_WV.png',
+      `WI_tally`,
+      '3_visualize/out/timeseries_WI.png',
+      `WY_tally`,
+      '3_visualize/out/timeseries_WY.png',
+      `AK_tally`,
+      '3_visualize/out/timeseries_AK.png',
+      `HI_tally`,
+      '3_visualize/out/timeseries_HI.png',
+      `GU_tally`,
+      '3_visualize/out/timeseries_GU.png',
+      `PR_tally`,
+      '3_visualize/out/timeseries_PR.png')
     
   timeseries_plots.yml_promise:
     command: summarize_timeseries_plots(I('3_visualize/out/timeseries_plots.yml'),
-      `WI_tally`,
-      '3_visualize/out/timeseries_WI.png',
-      `MN_tally`,
-      '3_visualize/out/timeseries_MN.png',
-      `MI_tally`,
-      '3_visualize/out/timeseries_MI.png',
+      `AL_tally`,
+      '3_visualize/out/timeseries_AL.png',
+      `AZ_tally`,
+      '3_visualize/out/timeseries_AZ.png',
+      `AR_tally`,
+      '3_visualize/out/timeseries_AR.png',
+      `CA_tally`,
+      '3_visualize/out/timeseries_CA.png',
+      `CO_tally`,
+      '3_visualize/out/timeseries_CO.png',
+      `CT_tally`,
+      '3_visualize/out/timeseries_CT.png',
+      `DE_tally`,
+      '3_visualize/out/timeseries_DE.png',
+      `DC_tally`,
+      '3_visualize/out/timeseries_DC.png',
+      `FL_tally`,
+      '3_visualize/out/timeseries_FL.png',
+      `GA_tally`,
+      '3_visualize/out/timeseries_GA.png',
+      `ID_tally`,
+      '3_visualize/out/timeseries_ID.png',
       `IL_tally`,
       '3_visualize/out/timeseries_IL.png',
+      `IN_tally`,
+      '3_visualize/out/timeseries_IN.png',
       `IA_tally`,
       '3_visualize/out/timeseries_IA.png',
-      `IN_tally`,
-      '3_visualize/out/timeseries_IN.png')
+      `KS_tally`,
+      '3_visualize/out/timeseries_KS.png',
+      `KY_tally`,
+      '3_visualize/out/timeseries_KY.png',
+      `LA_tally`,
+      '3_visualize/out/timeseries_LA.png',
+      `ME_tally`,
+      '3_visualize/out/timeseries_ME.png',
+      `MD_tally`,
+      '3_visualize/out/timeseries_MD.png',
+      `MA_tally`,
+      '3_visualize/out/timeseries_MA.png',
+      `MI_tally`,
+      '3_visualize/out/timeseries_MI.png',
+      `MN_tally`,
+      '3_visualize/out/timeseries_MN.png',
+      `MS_tally`,
+      '3_visualize/out/timeseries_MS.png',
+      `MO_tally`,
+      '3_visualize/out/timeseries_MO.png',
+      `MT_tally`,
+      '3_visualize/out/timeseries_MT.png',
+      `NE_tally`,
+      '3_visualize/out/timeseries_NE.png',
+      `NV_tally`,
+      '3_visualize/out/timeseries_NV.png',
+      `NH_tally`,
+      '3_visualize/out/timeseries_NH.png',
+      `NJ_tally`,
+      '3_visualize/out/timeseries_NJ.png',
+      `NM_tally`,
+      '3_visualize/out/timeseries_NM.png',
+      `NY_tally`,
+      '3_visualize/out/timeseries_NY.png',
+      `NC_tally`,
+      '3_visualize/out/timeseries_NC.png',
+      `ND_tally`,
+      '3_visualize/out/timeseries_ND.png',
+      `OH_tally`,
+      '3_visualize/out/timeseries_OH.png',
+      `OK_tally`,
+      '3_visualize/out/timeseries_OK.png',
+      `OR_tally`,
+      '3_visualize/out/timeseries_OR.png',
+      `PA_tally`,
+      '3_visualize/out/timeseries_PA.png',
+      `RI_tally`,
+      '3_visualize/out/timeseries_RI.png',
+      `SC_tally`,
+      '3_visualize/out/timeseries_SC.png',
+      `SD_tally`,
+      '3_visualize/out/timeseries_SD.png',
+      `TN_tally`,
+      '3_visualize/out/timeseries_TN.png',
+      `TX_tally`,
+      '3_visualize/out/timeseries_TX.png',
+      `UT_tally`,
+      '3_visualize/out/timeseries_UT.png',
+      `VT_tally`,
+      '3_visualize/out/timeseries_VT.png',
+      `VA_tally`,
+      '3_visualize/out/timeseries_VA.png',
+      `WA_tally`,
+      '3_visualize/out/timeseries_WA.png',
+      `WV_tally`,
+      '3_visualize/out/timeseries_WV.png',
+      `WI_tally`,
+      '3_visualize/out/timeseries_WI.png',
+      `WY_tally`,
+      '3_visualize/out/timeseries_WY.png',
+      `AK_tally`,
+      '3_visualize/out/timeseries_AK.png',
+      `HI_tally`,
+      '3_visualize/out/timeseries_HI.png',
+      `GU_tally`,
+      '3_visualize/out/timeseries_GU.png',
+      `PR_tally`,
+      '3_visualize/out/timeseries_PR.png')
     
