@@ -58,10 +58,14 @@ do_state_tasks <- function(oldest_active_sites, ...) {
     tickquote_combinee_objects = TRUE)
 
   # Build the tasks
-  obs_tallies <- scmake('obs_tallies_promise', remake_file='123_state_tasks.yml')
-  scmake('timeseries_plots.yml_promise', remake_file='123_state_tasks.yml')
+  loop_tasks(task_plan = task_plan,
+             task_makefile = '123_state_tasks.yml',
+             num_tries = 50)
+  # copy `obs_tallies` to local environment since it was already built with `loop_tasks`
+  obs_tallies <- remake::fetch('obs_tallies_promise', remake_file='123_state_tasks.yml')
 
-  # Read timeseries_plots.yml into a tibble format
+  # Read timeseries_plots.yml into a tibble format (loop_tasks already made sure
+  #   that `timeseries_plots.yml` was already built)
   timeseries_plots_info <- yaml::yaml.load_file('3_visualize/out/timeseries_plots.yml') %>%
     tibble::enframe(name = 'filename', value = 'hash') %>%
     mutate(hash = purrr::map_chr(hash, `[[`, 1))
