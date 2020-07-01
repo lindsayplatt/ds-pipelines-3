@@ -35,7 +35,7 @@ targets:
       'NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX',
       'UT','VA','WA','WV','WI','WY','AK','HI','PR')))
   parameter:
-    command: c(I('00060'))
+    command: c(I('00010'))
 
   # Identify oldest sites
   oldest_active_sites:
